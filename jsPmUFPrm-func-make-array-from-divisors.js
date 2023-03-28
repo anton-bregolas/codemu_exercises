@@ -1,14 +1,18 @@
-// №3
+// №2
 
-// Сделайте функцию, которая параметром будет принимать строку и возвращать массив ее символов.
+// Сделайте функцию, которая параметром будет принимать число и возвращать массив его делителей.
 
-function makeArrayFromString(str) {
+function makeArrayFromDivisors(num) {
+    let arrDiv = [];
 
-    let strArray = String(str).split('');
+    for (let i = 1; i <= num; i++) {
+        if (num % i == 0) {
+            arrDiv.push(i);
+        }
+    }
 
-    return strArray;
-
+    return arrDiv;
 }
 
-console.log(makeArrayFromString(12345));
-console.log(makeArrayFromString("asdfg"));
+let yourNumber = 360;
+console.log(makeArrayFromDivisors(yourNumber));
