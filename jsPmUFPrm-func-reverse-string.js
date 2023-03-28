@@ -1,13 +1,28 @@
-// №5
+// №4
 
-// Сделайте функцию, которая параметром будет принимать строку и делать заглавной первую букву этой строки.
+// Сделайте функцию, которая параметром будет принимать строку и переворачивать ее символы в обратном порядке.
 
-function makeFirstLetterCaps(string) {
+function reverseYourString(str) {
 
-    let capStr = string[0].toUpperCase() + string.slice(1);
+    // using in-built methods:
+    
+    // let revStr = String(str).split('').reverse().join('');
 
-    return capStr;
+    // using for loop:
+
+    let revStr = '';
+
+    if (typeof str !== 'string') {
+        str = String(str);
+    }
+
+    for (let i = str.length - 1; i >= 0; i--) {
+        revStr += str[i];
+    }
+
+    return revStr;
 }
 
-let strToCap = "laura";
-console.log(makeFirstLetterCaps(strToCap));
+let strToRev = "Hello Agent Cooper";
+console.log(reverseYourString(strToRev));
+console.log(reverseYourString(430));
